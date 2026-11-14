@@ -2,90 +2,180 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LinkNaijaHub - Real Version</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkNaijaHub - 36 Stars • 36 States • One Naija</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,Arial}
-body{background:#f6f7f9;color:#111}
-header{background:#0a7a3b;color:#fff;padding:12px 16px;position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
-.logoBadge{width:56px;height:56px;background:#fff;border-radius:50%;border:3px solid #FFD700;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative}
-.logoBadge b{color:#0a7a3b;font-size:22px}
-.logoBadge span{position:absolute;font-size:7px;color:#FFD700}
-header h1{font-size:22px}header p{font-size:12px;opacity:.9}
-nav{display:flex;gap:8px;overflow:auto;padding:10px;background:#fff;border-bottom:1px solid #ddd;position:sticky;top:80px;z-index:19}
-nav button{white-space:nowrap;border:1px solid #0a7a3b;background:#fff;color:#0a7a3b;padding:8px 12px;border-radius:20px;font-weight:700;cursor:pointer}
-nav button.active{background:#0a7a3b;color:#fff}
-.wrap{max-width:920px;margin:auto;padding:12px}
-.card{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-input,select,textarea{width:100%;padding:11px;border:1px solid #ddd;border-radius:10px;margin:6px 0;font-size:15px}
-.btn{background:#0a7a3b;color:#fff;border:0;padding:11px 14px;border-radius:10px;font-weight:800;cursor:pointer;width:100%}
-.btn2{background:#111;color:#fff;border:0;padding:9px 12px;border-radius:10px;font-weight:700;cursor:pointer}
-.btnO{background:#fff;color:#0a7a3b;border:1px solid #0a7a3b;padding:9px 12px;border-radius:10px;font-weight:700;cursor:pointer}
-.badge{display:inline-block;background:#e8f8ee;color:#0a7a3b;padding:3px 8px;border-radius:20px;font-size:12px;font-weight:700}
-.badgeRed{background:#ffe8e8;color:#e00}
-.small{font-size:13px;color:#555}
-.flex{display:flex;gap:8px;flex-wrap:wrap}.flex>*{flex:1}
-.qr{width:110px;height:110px}.hidden{display:none}
-.topBtns{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:12px}
-.topBtns button{padding:12px 6px;border-radius:12px;border:0;background:#111;color:#fff;font-weight:700;cursor:pointer}
-.topBtns button:nth-child(2){background:#ff7a00}.topBtns button:nth-child(3){background:#0a7a3b}.topBtns button:nth-child(4){background:#e00}
-.liveBox{background:#000;color:#fff;border-radius:12px;padding:12px}
-.liveBox video{width:100%;height:230px;background:#111;border-radius:10px;object-fit:cover}
-.chatBox{height:160px;overflow:auto;border:1px solid #eee;border-radius:10px;padding:8px;background:#fafafa;margin:8px 0}
-.chatMsg{padding:6px 8px;background:#fff;border-radius:10px;margin-bottom:6px;font-size:14px}
-.liveDot{color:#f00;font-weight:800}
-table{width:100%;border-collapse:collapse;font-size:13px}td,th{border:1px solid #eee;padding:8px;text-align:left}
-.shield{width:120px;height:140px;background:#0a7a3b;border:4px solid #FFD700;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;margin:auto}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+body{background:#f6f7f9;color:#111;padding-bottom:90px}
+a{color:inherit;text-decoration:none}
+.top{background:#00B53F;color:#fff;padding:14px 14px 10px;position:sticky;top:0;z-index:50;border-radius:0 0 20px 20px}
+.topRow{display:flex;align-items:center;gap:10px}
+.logo{width:42px;height:42px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#00B53F;font-size:22px}
+.topRow h1{font-size:19px;line-height:1}
+.topRow p{font-size:11px;opacity:.9}
+.search{margin-top:12px;background:#fff;border-radius:999px;display:flex;align-items:center;padding:10px 14px;gap:8px;color:#888;font-size:14px}
+.search input{border:none;outline:none;width:100%;font-size:14px}
+.flash{margin:12px 14px 0;background:linear-gradient(90deg,#FFD700,#FF8A00);color:#111;padding:12px 14px;border-radius:16px;display:flex;justify-content:space-between;align-items:center}
+.flash b{font-size:14px}
+.flash span{background:#111;color:#fff;padding:5px 10px;border-radius:999px;font-size:12px}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:12px 14px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cat{white-space:nowrap;background:#fff;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid #eee;cursor:pointer}
+.cat.active{background:#111;color:#fff;border-color:#111}
+.hero{margin:0 14px;background:#111;color:#fff;border-radius:20px;padding:18px;position:relative;overflow:hidden}
+.hero h2{font-size:22px;line-height:1.2}
+.hero h2 span{color:#FFD700}
+.hero p{font-size:13px;opacity:.8;margin:8px 0 14px}
+.heroBtns{display:flex;gap:8px}
+.btn{padding:11px 16px;border-radius:999px;font-weight:700;font-size:13px;border:none;cursor:pointer}
+.btnGold{background:#FFD700}
+.btnWhite{background:#fff;color:#111}
+.btnGreen{background:#00B53F;color:#fff}
+.sec{padding:16px 14px 0}
+.secHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.secHead h3{font-size:17px}
+.secHead a{font-size:13px;color:#00B53F;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.card img{width:100%;height:150px;object-fit:cover;display:block}
+.cardBody{padding:10px}
+.badge{font-size:10px;background:#FFF3CD;color:#7a5a00;padding:3px 7px;border-radius:999px;font-weight:700}
+.price{font-weight:800;font-size:16px;margin:4px 0 2px}
+.old{font-size:12px;color:#999;text-decoration:line-through}
+.stars{font-size:11px;color:#FF8A00}
+.cardBody p{font-size:12px;color:#666;line-height:1.3}
+.cardActions{display:flex;gap:6px;margin-top:8px}
+.mini{flex:1;padding:8px;border-radius:999px;border:1px solid #eee;background:#fff;font-size:12px;font-weight:700;cursor:pointer}
+.mini.green{background:#00B53F;color:#fff;border-color:#00B53F}
+.feedCard{background:#fff;border-radius:20px;overflow:hidden;margin:0 14px 14px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.feedTop{display:flex;align-items:center;gap:10px;padding:12px}
+.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(45deg,#00B53F,#FFD700);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+.feedTop small{color:#888}
+.feedCard img{width:100%;height:300px;object-fit:cover}
+.feedActions{display:flex;gap:16px;padding:12px 14px;font-size:20px}
+.feedActions span{cursor:pointer}
+.feedText{padding:0 14px 14px;font-size:13px;line-height:1.5}
+.reels{margin:0 14px;background:#000;border-radius:20px;overflow:hidden;color:#fff;position:relative;height:480px}
+.reels img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.reelOverlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.reelSide{position:absolute;right:12px;bottom:100px;display:flex;flex-direction:column;gap:14px;text-align:center;font-size:22px}
+.reelSide div{background:rgba(255,255,255,.2);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.reelSide small{font-size:11px;display:block}
+.postBox{margin:16px 14px;background:#fff;border-radius:20px;padding:16px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.postBox input,.postBox select{width:100%;padding:12px;border-radius:12px;border:1px solid #eee;margin-bottom:10px;outline:none}
+.tabs{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:12px 0 18px;border-top:1px solid #eee;z-index:60}
+.tabs div{text-align:center;font-size:11px;cursor:pointer;color:#888}
+.tabs div.active{color:#00B53F;font-weight:800}
+.tabs div i{display:block;font-size:22px;font-style:normal}
+.hidden{display:none}
 </style>
 </head>
 <body>
-<header><div class="logoBadge"><b>LN</b><span style="top:2px">★ ★ ★</span><span style="bottom:2px">★ ★ ★</span></div><div><h1>LinkNaijaHub</h1><p>36 Stars • 36 States • One Naija • Buy, Sell, Bargain, Ride, Live, Crawler, Booking</p></div></header>
-<nav>
-<button class="active" onclick="show('home',this)">Home</button>
-<button onclick="show('links',this)">1 Post Link</button>
-<button onclick="show('find',this)">2 Find Customers</button>
-<button onclick="show('help',this)">3 Assistance</button>
-<button onclick="show('qr',this)">4 QR</button>
-<button onclick="show('agent',this)">5 AI Agent</button>
-<button onclick="show('apk',this)">6 Make App</button>
-<button onclick="show('gallery',this)">7 App Gallery</button>
-<button onclick="show('shop',this)">8 My Shop</button>
-<button onclick="show('market',this)">9 Market</button>
-<button onclick="show('bargain',this)">Bargain</button>
-<button onclick="show('ride',this)">Ride</button>
-<button onclick="show('live',this)">11 Live 🔴</button>
-<button onclick="show('crawler',this)">12 Crawler</button>
-<button onclick="show('booking',this)">13 Booking</button>
-<button onclick="show('packages',this)">Sell Packages</button>
-<button onclick="show('setup',this)">Setup</button>
-</nav>
-<div class="wrap">
-<div id="home" class="page">
-<div class="card"><div class="shield"><div style="font-size:10px;color:#FFD700">LINKNAIJAHUB</div><div style="font-size:10px;color:#FFD700">★★★★★★★★★</div><div style="font-size:32px;font-weight:900;background:#fff;color:#0a7a3b;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center">LN</div><div style="font-size:10px;color:#FFD700">★★★★★★★★★</div><div style="font-size:8px;color:#FFD700">FOOTBALL FEDERATION • EST 2024</div></div><input id="search" placeholder="Search market, ride, anything..." oninput="renderLocal()"><div class="topBtns"><button onclick="show('market')">Market</button><button onclick="show('bargain')">Bargain</button><button onclick="show('ride')">Ride</button><button onclick="show('live')">Live 🔴</button></div><p class="small">Post link. Find customers. Crawler go find customers. Book appointment. Pay. Live for 1,000-20,000 with Runner when crowd big. REAL: Supabase = everybody see wetin you post.</p><p class="small" id="connStatus">Connecting...</p></div>
-<div class="card"><h3>🔴 Live Now</h3><div id="homeLive"></div></div>
-<div class="card"><h3>Latest Links</h3><div id="homeList"></div></div>
-<div class="card"><h3>Top Ad Billboard</h3><p class="small">24h ₦500 | 7 days ₦7,500 | 30 days ₦20,000 — GOLD border + ⭐ FEATURED</p><button class="btn" onclick="alert('Paystack / Flutterwave checkout')">Boost My Post — Pay Now</button></div>
+<div class="top">
+<div class="topRow">
+<div class="logo">L</div>
+<div><h1>LinkNaijaHub</h1><p>36 Stars • 36 States • One Naija 🇳🇬</p></div>
+<div style="margin-left:auto;background:#FFD700;color:#111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800">+ Post Link</div>
 </div>
-<div id="links" class="page hidden"><div class="card"><h2>1. Post Your Link — REAL</h2><input id="l_title" placeholder="Title e.g. My Hair Shop Lagos"><input id="l_link" placeholder="https://..."><input id="l_price" placeholder="Price e.g. 50000"><input id="l_loc" placeholder="Location e.g. Lagos, Abuja"><input id="l_phone" placeholder="WhatsApp e.g. 080..."><select id="l_cat"><option>General</option><option>Phones</option><option>Fashion</option><option>Food</option><option>Home</option><option>Cars</option><option>Services</option></select><input id="l_img" placeholder="Image link (optional)"><button class="btn" onclick="addLink()">Post Link → Everybody Go See Am</button><p class="small" id="l_msg"></p></div><div id="linkList"></div></div>
-<div id="find" class="page hidden"><div class="card"><h2>2. Find Customers</h2><input id="f_title" placeholder="I need... e.g. I need Plumber in Ikeja"><input id="f_budget" placeholder="Budget e.g. 20000"><input id="f_loc" placeholder="Location"><input id="f_phone" placeholder="Your WhatsApp"><button class="btn" onclick="addFind()">Post Need →</button></div><div id="findList"></div></div>
-<div id="help" class="page hidden"><div class="card"><h2>3. Want Assistance?</h2><input id="h_what" placeholder="Wetin you dey find?"><textarea id="h_detail" placeholder="Explain small..."></textarea><input id="h_phone" placeholder="Your WhatsApp"><button class="btn" onclick="addHelp()">Ask For Help →</button></div><div id="helpList"></div></div>
-<div id="qr" class="page hidden"><div class="card"><h2>4. QR Code — FREE REAL API</h2><input id="qr_text" placeholder="Paste link to turn to QR"><button class="btn" onclick="makeQR()">Generate QR</button><div style="text-align:center;margin-top:10px"><img id="qrImg" class="qr"><p id="qrLink" class="small"></p><button class="btn2" onclick="downloadQR()">Download QR</button></div><p class="small">API: api.qrserver.com — Free, Real</p></div></div>
-<div id="agent" class="page hidden"><div class="card"><h2>5. Customer Finder AI Agent</h2><input id="a_business" placeholder="Your business e.g. Hair Vendor Lagos"><input id="a_product" placeholder="Product / Service"><input id="a_loc2" placeholder="Location"><select id="a_target"><option value="10">I want 10 customers per day</option><option value="20">I want 20 customers per day</option><option value="50">I want 50 customers per day</option></select><button class="btn" onclick="runAgent()">Run AI Agent + Crawler →</button><div id="agentOut" class="card hidden" style="margin-top:10px"></div></div></div>
-<div id="apk" class="page hidden"><div class="card"><h2>6. Convert To App (Wrapper App)</h2><input id="apk_name" placeholder="App Name e.g. Ada Hair App"><input id="apk_link" placeholder="Your Link"><input id="apk_phone" placeholder="Your WhatsApp"><button class="btn" onclick="makeApp()">Create My App →</button></div><div id="apkList"></div></div>
-<div id="gallery" class="page hidden"><div class="card"><h2>7. App Gallery - Reapp</h2></div><div id="galleryList"></div></div>
-<div id="shop" class="page hidden"><div class="card"><h2>8. My Shop</h2><input id="s_name" placeholder="Shop Name"><input id="s_phone" placeholder="Shop WhatsApp"><button class="btn" onclick="saveShop()">Save My Shop</button><p id="shopInfo" class="small"></p></div><div class="card"><h3>Add Product</h3><input id="s_prod" placeholder="Product name"><input id="s_price" placeholder="Price"><input id="s_img2" placeholder="Image link"><button class="btn" onclick="addShopProduct()">Add Product</button></div><div id="shopProducts"></div></div>
-<div id="market" class="page hidden"><div class="card"><h2>9. Market</h2><div class="flex"><button class="btnO" onclick="filterCat('All')">All</button><button class="btnO" onclick="filterCat('Phones')">Phones</button><button class="btnO" onclick="filterCat('Fashion')">Fashion</button><button class="btnO" onclick="filterCat('Food')">Food</button><button class="btnO" onclick="filterCat('Cars')">Cars</button></div></div><div id="marketList"></div></div>
-<div id="bargain" class="page hidden"><div class="card"><h2>Bargain — Make Offer</h2><input id="b_item" placeholder="Which product?"><input id="b_offer" type="number" placeholder="Your offer e.g. 40000"><button class="btn" onclick="makeOffer()">Send Offer →</button></div><div id="bargainList"></div></div>
-<div id="ride" class="page hidden"><div class="card"><h2>Ride — Your Price + Connector + Code</h2><input id="r_from" placeholder="Where you dey? e.g. Ikeja"><input id="r_to" placeholder="Where you wan go? e.g. Lekki"><input id="r_price" type="number" placeholder="Your price e.g. 5000"><input id="r_phone" placeholder="Your WhatsApp"><button class="btn" onclick="addRide()">Request Ride →</button><p class="small">Hub 2% + Flutterwave 1.5% = 3.5%. Connector no collect if driver no reach with 4-digit code.</p><div id="rideCode" class="card hidden"></div></div><div id="rideList"></div><div class="card"><h3>Drivers</h3><p>Musa - Toyota Corolla - ABC123 - ⭐4.8 <button class="btn2" onclick="acceptDriver('Musa')">Accept</button></p><p>Chiamaka - Honda Civic - XYZ456 - ⭐4.9 <button class="btn2" onclick="acceptDriver('Chiamaka')">Accept</button></p></div></div>
-<div id="live" class="page hidden"><div class="card"><h2>11. Private Live Chat Streaming 🔴</h2><p class="small">Watch Ball, Watch Video, Dating, Artist, Shop Live. Public / Private / Paid.</p><select id="lv_type"><option>⚽ Watching Ball - Football Live</option><option>🎬 Watching Video Together</option><option>❤️ Dating Live - Private 1-to-1</option><option>🎤 Artist Performing Live</option><option>🛍️ Shop Live - Sell Live</option><option>💬 Private Chat Live</option></select><input id="lv_title" placeholder="Live Title e.g. Man Utd vs Arsenal"><input id="lv_name" placeholder="Your Name / Artist Name"><select id="lv_privacy"><option value="public">🌍 Public - Anybody fit watch</option><option value="private">🔒 Private - Only with code</option><option value="paid">💰 Private Paid - Pay to enter</option></select><input id="lv_price" placeholder="If Paid, price e.g. 1000"><input id="lv_code" placeholder="Private Code e.g. 1234"><select id="lv_quality"><option value="480">Video Quality: 480p - For slow network / FREE</option><option value="720">Video Quality: 720p HD - Recommended</option><option value="1080">Video Quality: 1080p Full HD - For Runner only (1k-20k viewers)</option></select><select id="lv_runner"><option value="free">Runner: FREE Browser (1-10 viewers)</option><option value="livekit">Runner: LiveKit Cloud (1,000-20,000 viewers)</option><option value="agora">Runner: Agora (1,000-20,000 viewers)</option></select><button class="btn" onclick="createLive()">Go Live Now 🔴</button></div><div class="card"><h3>🔴 Live Now</h3><div class="flex"><button class="btnO" onclick="filterLive('All')">All</button><button class="btnO" onclick="filterLive('Ball')">⚽ Ball</button><button class="btnO" onclick="filterLive('Video')">🎬 Video</button><button class="btnO" onclick="filterLive('Dating')">❤️ Dating</button><button class="btnO" onclick="filterLive('Artist')">🎤 Artist</button></div></div><div id="liveList"></div><div class="card"><h3>Watching Room</h3><div class="liveBox"><p><span class="liveDot">● LIVE</span> <span id="watchTitle">No live selected</span> <span id="watchQuality" class="small"></span></p><video id="myVideo" controls playsinline poster="https://via.placeholder.com/800x400?text=LinkNaijaHub+LIVE"></video><div class="flex" style="margin-top:8px"><button class="btn2" onclick="startCam()">📷 Start My Camera</button><button class="btn2" onclick="stopCam()">Stop</button><button class="btn2" onclick="shareScreen()">🖥️ Share Screen / Ball</button></div></div><div class="chatBox" id="liveChat"></div><div class="flex"><input id="chatInput" placeholder="Type for live chat..."><button class="btn2" onclick="sendChat()">Send</button></div><div class="flex" style="margin-top:8px"><button class="btnO" onclick="sendGift('🌹')">🌹 Rose</button><button class="btnO" onclick="sendGift('❤️')">❤️ Love</button><button class="btnO" onclick="sendGift('🎁')">🎁 Gift</button><button class="btnO" onclick="alert('Tip sent via Flutterwave / Paystack')">💰 Tip Artist</button></div></div></div>
-<div id="crawler" class="page hidden"><div class="card"><h2>12. Social Media Crawler</h2><p class="small">Crawler go waka go TikTok, Instagram, Facebook, X, YouTube, Google — find people wey dey talk "I need..."</p><input id="c_kw" placeholder="Keyword e.g. I need plumber Lagos"><select id="c_src"><option>All Sources — TikTok + Instagram + Facebook + X + YouTube + Google</option><option>TikTok</option><option>Instagram</option><option>Facebook</option><option>X (Twitter)</option><option>YouTube</option><option>Google Search</option></select><select id="c_target"><option value="10">Find 10 customers per day</option><option value="20">Find 20 customers per day</option><option value="50">Find 50 customers per day</option></select><button class="btn" onclick="runCrawler()">Run Crawler →</button><div id="crawlerOut"></div></div></div>
-<div id="booking" class="page hidden"><div class="card"><h2>13-15. Book Customers + Appointment + Pay</h2><input id="bk_name" placeholder="Customer Name"><input id="bk_service" placeholder="Service e.g. Hair, Plumber, Driver"><input id="bk_date" type="date"><input id="bk_time" type="time"><input id="bk_price" type="number" placeholder="Booking / Full Price e.g. 20000"><input id="bk_phone" placeholder="Customer WhatsApp"><input id="bk_seller" placeholder="Seller WhatsApp"><button class="btn" onclick="bookAppointment()">Book Appointment + Pay →</button><p class="small">Flutterwave 1.5% + Hub 2% = 3.5%.</p></div><div class="card"><h3>My Appointments</h3><div id="bookingList"></div></div><div class="card"><h3>Money Calculator</h3><input id="calc_price" type="number" placeholder="Job price e.g. 80000" oninput="calcMoney()"><p id="calcOut" class="small"></p></div></div>
-<div id="packages" class="page hidden"><div class="card"><h2>Sell Crawler + AI As Service</h2><table><tr><th>Package</th><th>Customers / Day</th><th>Price / Week</th><th>Action</th></tr><tr><td>Starter</td><td>10 / day</td><td>₦5,000</td><td><button class="btn2" onclick="buyPackage('Starter 10/day ₦5000')">Buy</button></td></tr><tr><td>Growth</td><td>20 / day + Booking</td><td>₦10,000</td><td><button class="btn2" onclick="buyPackage('Growth 20/day ₦10000')">Buy</button></td></tr><tr><td>Pro</td><td>50 / day + Booking + Appointment + Live</td><td>₦20,000</td><td><button class="btn2" onclick="buyPackage('Pro 50/day ₦20000')">Buy</button></td></tr></table></div></div>
-<div id="setup" class="page hidden"><div class="card"><h2>Setup — Make Am REAL (Supabase)</h2><input id="supaUrl" placeholder="Supabase URL e.g. https://xyz.supabase.co"><input id="supaKey" placeholder="Supabase Anon Key"><input id="livekitUrl" placeholder="LiveKit URL (optional, for 1k-20k live)"><input id="livekitToken" placeholder="LiveKit Token (optional)"><input id="payKey" placeholder="Flutterwave / Paystack Public Key (optional)"><button class="btn" onclick="saveSetup()">Save Setup → Make Real</button><p class="small" id="setupMsg"></p><p class="small"><b>SQL for Supabase:</b><br>create table if not exists links (id uuid default gen_random_uuid() primary key, title text, link text, price text, loc text, phone text, cat text, img text, created_at timestamptz default now());<br>create table if not exists finds (id uuid default gen_random_uuid() primary key, title text, budget text, loc text, phone text, created_at timestamptz default now());<br>create table if not exists lives (id uuid default gen_random_uuid() primary key, type text, title text, name text, privacy text, price text, code text, viewers int, created_at timestamptz default now());<br>create table if not exists bookings (id uuid default gen_random_uuid() primary key, name text, service text, date text, time text, price text, phone text, seller text, status text default 'pending', created_at timestamptz default now());<br>alter table links enable row level security; alter table finds enable row level security; alter table lives enable row level security; alter table bookings enable row level security;<br>create policy "public_read" on links for select using (true); create policy "public_insert" on links for insert with check (true); create policy "public_read2" on finds for select using (true); create policy "public_insert2" on finds for insert with check (true); create policy "public_read3" on lives for select using (true); create policy "public_insert3" on lives for insert with check (true); create policy "public_read4" on bookings for select using (true); create policy "public_insert4" on bookings for insert with check (true);</p></div></div>
+<div class="search">🔍 <input id="searchInput" placeholder="Search Market, Music, Fashion, Ride..."></div>
+</div>
+<div class="flash"><div><b>⚡ Flash Sales Today</b><br><small>Up to 50% off Lagos Market</small></div><span>Shop Now →</span></div>
+<div class="cats" id="cats">
+<div class="cat active" onclick="filterCat(this,'All')">All</div>
+<div class="cat" onclick="filterCat(this,'Market')">🛒 Market</div>
+<div class="cat" onclick="filterCat(this,'Fashion')">👗 Fashion</div>
+<div class="cat" onclick="filterCat(this,'Food')">🍲 Food</div>
+<div class="cat" onclick="filterCat(this,'Music')">🎵 Music</div>
+<div class="cat" onclick="filterCat(this,'Ride')">🚕 Ride</div>
+<div class="cat" onclick="filterCat(this,'Live')">🔴 Live</div>
+</div>
+<div class="hero">
+<h2>Discover Naija.<br><span>Post Your Link. Get Paid.</span></h2>
+<p>Paste TikTok, Jumia, Spotify, YouTube link — free. Boost ₦500 to go Top Billboard.</p>
+<div class="heroBtns"><button class="btn btnGold" onclick="showTab('post')">+ Post Link Free</button><button class="btn btnWhite" onclick="showTab('reels')">▶ Watch Reels</button></div>
+</div>
+<div id="tab-home">
+<div class="sec"><div class="secHead"><h3>🔥 Top Billboard • Sponsored</h3><a href="#">See all</a></div>
+<div class="grid" id="topGrid"></div></div>
+<div class="sec"><div class="secHead"><h3>📸 Discoveries • Product Hunt Style</h3><a href="#">Trending</a></div></div>
+<div id="feed"></div>
+<div class="sec"><div class="secHead"><h3>🎬 Reels • TikTok Style</h3><a href="#" onclick="showTab('reels')">Open Reels</a></div>
+<div class="reels"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80"><div class="reelSide"><div>❤️<small>12k</small></div><div>💬<small>890</small></div><div>↗️<small>Share</small></div></div><div class="reelOverlay"><b>@ada_lagos • Lagos Fashion</b><p>New Ankara drop 🔥 Link in bio — Tap to shop</p><button class="btn btnGreen" style="width:fit-content">Visit Store →</button></div></div>
+</div>
+</div>
+<div id="tab-market" class="hidden">
+<div class="sec"><div class="secHead"><h3>🛒 Market — Jumia Style</h3><span>1,240 items</span></div>
+<div class="grid" id="marketGrid"></div></div>
+</div>
+<div id="tab-reels" class="hidden">
+<div class="sec"><div class="secHead"><h3>🎬 Reels — Swipe Up</h3><span>Live Now</span></div>
+<div class="reels"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80"><div class="reelSide"><div>❤️<small>8.2k</small></div><div>💬<small>412</small></div></div><div class="reelOverlay"><b>@tunde_abuja • Abuja</b><p>Afrobeats freestyle 🎵🔥</p><button class="btn btnGold" style="width:fit-content">Follow + Shop</button></div></div>
+<br>
+<div class="reels"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&q=80"><div class="reelSide"><div>❤️<small>5k</small></div><div>💬<small>230</small></div></div><div class="reelOverlay"><b>@chioma_food • Lagos Food</b><p>Best Jollof in Lagos? 😋</p><button class="btn btnGreen" style="width:fit-content">Order Now</button></div></div>
+</div>
+</div>
+<div id="tab-post" class="hidden">
+<div class="postBox">
+<h3>🚀 Share Your Discovery — Free</h3>
+<p style="font-size:13px;color:#666;margin:6px 0 14px">Paste link only — we embed it, no upload.</p>
+<input id="pTitle" placeholder="Title e.g. Ankara Gown Lagos">
+<input id="pLink" placeholder="Paste link — TikTok / Jumia / Spotify / YouTube">
+<input id="pPrice" placeholder="Price e.g. ₦15,000">
+<select id="pCat"><option>Market</option><option>Fashion</option><option>Food</option><option>Music</option><option>Ride</option><option>Live</option></select>
+<input id="pImg" placeholder="Image link (optional) — or leave blank">
+<button class="btn btnGreen" style="width:100%" onclick="addPost()">Post Now → Free</button>
+<button class="btn btnGold" style="width:100%;margin-top:8px" onclick="alert('Boost ₦500 — Paystack coming soon! Your post go Top Billboard 24h')">🔥 Boost ₦500 — Go Top Billboard</button>
+</div>
+<div class="sec"><h3>Your Posts</h3><div id="myPosts"></div></div>
+</div>
+<div class="tabs">
+<div class="active" onclick="showTab('home',this)"><i>🏠</i>Home</div>
+<div onclick="showTab('market',this)"><i>🛒</i>Market</div>
+<div onclick="showTab('reels',this)"><i>🎬</i>Reels</div>
+<div onclick="showTab('post',this)"><i>➕</i>Post</div>
 </div>
 <script>
-let CFG=JSON.parse(localStorage.getItem('lnh_cfg')||'{}');let supa=null;
-function initSupa(){let u=CFG.url,k=CFG.key;if(u&&k){try{supa=window.supabase.createClient(u,k);document.getElementById('connStatus').innerText='✅ Connected to Supabase REAL';loadFromSupa()}catch(e){document.getElementById('connStatus').innerText='⚠️ Preview Mode — Go Setup → Paste Supabase URL + Key'}}else{document.getElementById('connStatus').innerText='⚠️ Preview Mode — Go Setup → Paste Supabase URL + Key to make am REAL'}}
-function saveSetup(){CFG={url:document.getElementById('supaUrl').value.trim(),key:document.getElementById('supaKey').value.trim(),livekitUrl:document.getElementById('livekitUrl').value.trim(),livekitToken:document.getElementById('livekitToken').value.trim(),payKey:document.getElementById('payKey').value.trim()};localStorage.setItem('lnh_cfg',JSON.stringify(CFG));document.getElementById('setupMsg').innerText='Saved! Reload page — Now REAL.';initSupa()}
-async function loadFromSupa(){if(!supa)return;let {data}=await supa.from('links').select('*').order('created_at',{ascending:false}).limit(20);if(data&&data.length)DB.links=data.map(d=>({title:d.title,link:d.link,price:d.price,loc:d.loc,phone:d.phone,cat:d.cat,img:d.img}));let {data:f}=awa
+let products=[
+{t:"Ankara Gown - Lagos",p:"₦15,000",o:"₦30,000",c:"Fashion",img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&q=80",likes:342},
+{t:"Sneakers - Ikeja",p:"₦28,500",o:"₦45,000",c:"Fashion",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",likes:512},
+{t:"Jollof + Chicken",p:"₦5,500",o:"₦7,000",c:"Food",img:"https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",likes:890},
+{t:"iPhone 13 - Abuja",p:"₦420,000",o:"₦500,000",c:"Market",img:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&q=80",likes:210},
+];
+let saved=JSON.parse(localStorage.getItem('lnh_posts')||'[]');
+let all=[...saved,...products];
+function render(){
+let top=document.getElementById('topGrid'); top.innerHTML='';
+let market=document.getElementById('marketGrid'); market.innerHTML='';
+let feed=document.getElementById('feed'); feed.innerHTML='';
+all.forEach((x,i)=>{
+let html=`<div class="card"><img src="${x.img||'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80'}"><div class="cardBody"><span class="badge">🔥 ${x.c||'Market'} • Sponsored</span><div class="price">${x.p||x.price||'₦15,000'}</div><div class="old">${x.o||''}</div><div class="stars">⭐⭐⭐⭐⭐ (4.8)</div><p>${x.t||x.title}</p><div class="cardActions"><button class="mini" onclick="like(${i},this)">❤️ ${x.likes||120}</button><button class="mini green">Shop →</button></div></div></div>`;
+top.innerHTML+=html; market.innerHTML+=html;
+feed.innerHTML+=`<div class="feedCard"><div class="feedTop"><div class="avatar">${(x.t||'L')[0]}</div><div><b>${x.t||'LinkNaijaHub'}</b><br><small>Lagos • 2h ago • ${x.c||'Market'}</small></div><div style="margin-left:auto">•••</div></div><img src="${x.img||'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80'}"><div class="feedActions"><span onclick="like(${i},this)">❤️</span><span>💬</span><span>↗️</span><span style="margin-left:auto">🔖</span></div><div class="feedText"><b>${x.likes||120} likes</b><br>${x.t||'New drop'} — Tap Shop to buy. Price ${x.p||'₦15,000'} 🔥</div></div>`;
+});
+}
+function like(i,el){all[i].likes=(all[i].likes||120)+1; render();}
+function showTab(id,el){
+['home','market','reels','post'].forEach(t=>document.getElementById('tab-'+t).classList.add('hidden'));
+document.getElementById('tab-'+id).classList.remove('hidden');
+document.querySelectorAll('.tabs div').forEach(d=>d.classList.remove('active'));
+if(el) el.classList.add('active'); window.scrollTo(0,0);
+}
+function filterCat(el,cat){
+document.querySelectorAll('.cat').forEach(c=>c.classList.remove('active')); el.classList.add('active');
+if(cat==='All'){all=[...saved,...products]} else {all=[...saved,...products].filter(p=>(p.c||p.cat||'Market')===cat)}
+render();
+}
+function addPost(){
+let t=document.getElementById('pTitle').value, l=document.getElementById('pLink').value, pr=document.getElementById('pPrice').value, c=document.getElementById('pCat').value, img=document.getElementById('pImg').value;
+if(!t||!l) return alert('Put Title + Link');
+let np={t:t,p:pr||'₦0',c:c,img:img||'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80',likes:0,link:l};
+saved.unshift(np); localStorage.setItem('lnh_posts',JSON.stringify(saved)); all=[...saved,...products]; render(); alert('Posted! 🎉 E don show for Home + Market'); showTab('home');
+}
+document.getElementById('searchInput').addEventListener('input',e=>{
+let q=e.target.value.toLowerCase(); all=[...saved,...products].filter(p=>(p.t||'').toLowerCase().includes(q)); render();
+});
+render();
+</script>
+</body>
+</html>
